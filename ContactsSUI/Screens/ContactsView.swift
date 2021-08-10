@@ -14,10 +14,15 @@ struct ContactsView: View {
 
     var body: some View {
         NavigationView {
-            List(dataManager.persons) { contact in
-                NavigationLink(destination: ContactDetailsView(contact: contact)) {
-                    ContactCellView(contact: contact)
+            List {
+                ForEach(dataManager.persons, id: \.self) { contact in
+                    NavigationLink(destination: ContactDetailsView(contact: contact)) {
+                        ContactCellView(contact: contact)
+                    }
                 }
+                .onDelete(perform: { indexSet in
+                    dataManager.removeContact(index: indexSet)
+                })
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

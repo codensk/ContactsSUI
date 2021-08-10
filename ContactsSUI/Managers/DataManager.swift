@@ -24,6 +24,12 @@ final class DataManager: ObservableObject {
         persons.append(contact)
     }
     
+    func removeContact(index: IndexSet) {
+        guard let index = index.first else { return }
+        
+        persons.remove(at: index)
+    }
+    
     func chooseRandomData() {
         var firstNames = firstNames.shuffled()
         var lastNames = lastNames.shuffled()
