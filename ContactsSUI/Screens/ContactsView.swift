@@ -14,7 +14,7 @@ struct ContactsView: View {
 
     var body: some View {
         NavigationView {
-            List(dataManager.chooseRandomData()) { contact in
+            List(dataManager.persons) { contact in
                 NavigationLink(destination: ContactDetailsView(contact: contact)) {
                     ContactCellView(contact: contact)
                 }
@@ -26,13 +26,13 @@ struct ContactsView: View {
                     }, label: {
                         Image(systemName: "plus")
                     })
-                    .sheet(isPresented: $newContactState, content: {
-                        NewContactView(newContactState: $newContactState)
-                    })
                 }
             }
             .navigationBarTitle("Contacts")
         }
+        .sheet(isPresented: $newContactState, content: {
+            NewContactView(newContactState: $newContactState)
+        })
     }
 }
 

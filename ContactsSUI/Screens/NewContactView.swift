@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NewContactView: View {
+    @EnvironmentObject var dataManager: DataManager
+    
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var phone: String = ""
@@ -25,39 +27,46 @@ struct NewContactView: View {
                         .fontWeight(.semibold)
                     
                     HStack {
-                        TextField("Имя", text: $firstName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                        TextField("Фамилия", text: $lastName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        CustomTextField(placeHolder: "Имя", value: $firstName)
+                        CustomTextField(placeHolder: "Фамилия", value: $lastName)
                     }
                 }
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Телефон")
                         .fontWeight(.semibold)
-                    TextField("Например, 89137532198", text: $phone)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    CustomTextField(placeHolder: "Например, 89137532198", value: $phone)
                 }
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Электронная почта")
                         .fontWeight(.semibold)
-                    TextField("name@site.ru", text: $email)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    CustomTextField(placeHolder: "name@site.ru", value: $email)
                 }
                 
                 Spacer()
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    self.dataManager.appendContact(
+                        Person(
+                            firstName: firstName,
+                            lastName: lastName,
+                            email: phone,
+                            phone: email)
+                    )
+                    
+                    self.newContactState = false
+                }, label: {
                     Text("Добавить")
-                }).setStyle()
+                })
+                .setStyle()
                 
                 Spacer()
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        self.newContactState.toggle()
+                        self.newContactState = false
                     }, label: {
                         Text("Закрыть")
                     })
@@ -71,6 +80,6 @@ struct NewContactView: View {
 
 struct NewContactView_Previews: PreviewProvider {
     static var previews: some View {
-        NewContactView(newContactState: .constant(true))
+        NewContactView(newContactState: .constant(false)).environmentObject(DataManager())
     }
 }

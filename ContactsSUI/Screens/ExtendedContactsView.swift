@@ -14,7 +14,7 @@ struct ExtendedContactsView: View {
         NavigationView {
             
             List {
-                ForEach(dataManager.chooseRandomData(), id: \.self) { contact in 
+                ForEach(dataManager.persons, id: \.self) { contact in 
                     Section(header:
                                 Text(contact.fullName)
                                 .fontWeight(.semibold)

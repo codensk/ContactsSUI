@@ -22,7 +22,6 @@ struct ExtendedContactCellView_Previews: PreviewProvider {
     static var previews: some View {
         ExtendedContactCellView(contact:
                                     Person(
-                                        id: 0,
                                         firstName: "Sergey",
                                         lastName: "Vorobev",
                                         email: "rusbear28@yandex.ru",

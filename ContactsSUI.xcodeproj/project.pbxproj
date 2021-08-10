@@ -22,6 +22,7 @@
 		A25C97DA26C23BEF00DB3EAA /* NewContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C97D926C23BEF00DB3EAA /* NewContactView.swift */; };
 		A25C97DD26C2421600DB3EAA /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C97DC26C2421600DB3EAA /* ButtonStyle.swift */; };
 		A25C97DF26C2422E00DB3EAA /* ViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C97DE26C2422E00DB3EAA /* ViewShadow.swift */; };
+		A25C97E126C25BC900DB3EAA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C97E026C25BC900DB3EAA /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A25C97D926C23BEF00DB3EAA /* NewContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactView.swift; sourceTree = "<group>"; };
 		A25C97DC26C2421600DB3EAA /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		A25C97DE26C2422E00DB3EAA /* ViewShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewShadow.swift; sourceTree = "<group>"; };
+		A25C97E026C25BC900DB3EAA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				A25C97D126C21DCB00DB3EAA /* ContactCellView.swift */,
 				A25C97D526C2280C00DB3EAA /* ExtendedContactCellView.swift */,
 				A25C97D726C2299100DB3EAA /* CellRowView.swift */,
+				A25C97E026C25BC900DB3EAA /* CustomTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25C97E126C25BC900DB3EAA /* CustomTextField.swift in Sources */,
 				A25C97D426C2222A00DB3EAA /* ContactDetailsView.swift in Sources */,
 				A25C97DF26C2422E00DB3EAA /* ViewShadow.swift in Sources */,
 				A25C97CE26C21B6C00DB3EAA /* Person.swift in Sources */,
